@@ -14,16 +14,13 @@ def VGG_extract_transforms():
     """
     data_transforms = {
     'train': transforms.Compose([
-        transforms.Resize(224),
-        # transforms.RandomHorizontalFlip(),
-        # transforms.RandomVerticalFlip(),
-        # transforms.ColorJitter(0.15, 0.15, 0.15),
+        transforms.Resize((224,224)),
         transforms.ToTensor(),
         #TODO: use bio dataset mean and variance
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
     'val': transforms.Compose([
-        transforms.Resize(224),
+        transforms.Resize((224,224)),
         #transforms.CenterCrop(224),
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -46,7 +43,7 @@ def VGG_transforms():
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
     'val': transforms.Compose([
-        transforms.Resize(224),
+        transforms.Resize((224, 224)),
         #transforms.CenterCrop(224),
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])

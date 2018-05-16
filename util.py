@@ -7,6 +7,30 @@ import os
 import numpy as np
 import shutil
 
+
+def VGG_extract_transforms():
+    """Data preprocessing pipeline for VGG model
+       #TODO: add more options for data augmentation
+    """
+    data_transforms = {
+    'train': transforms.Compose([
+        transforms.Resize(224),
+        # transforms.RandomHorizontalFlip(),
+        # transforms.RandomVerticalFlip(),
+        # transforms.ColorJitter(0.15, 0.15, 0.15),
+        transforms.ToTensor(),
+        #TODO: use bio dataset mean and variance
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]),
+    'val': transforms.Compose([
+        transforms.Resize(224),
+        #transforms.CenterCrop(224),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]),
+    }
+    return data_transforms
+
 def VGG_transforms():
     """Data preprocessing pipeline for VGG model
        #TODO: add more options for data augmentation

@@ -30,7 +30,7 @@ from util import VGG_transforms, VGG_dataloader, bio_datasets
 
 DATA_DIR = '/home/wangxiny/Bio/Val_0412_CE'
 MODEL_NAME = 'VGG19_bn'
-CKPT_PATH = '/home/wangxiny/Bio/Breast_Tumor_With_SRAE/ckpt-45.pth.tar'
+CKPT_PATH = '/home/wangxiny/Bio/Breast_Tumor_With_SRAE/train_0515/ckpt-145.pth.tar'
 
 data_transforms = VGG_transforms()
 image_datasets = bio_datasets(DATA_DIR, data_transforms)
